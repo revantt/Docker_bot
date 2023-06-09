@@ -9,7 +9,7 @@ class Upps:
         self.Tokens = ["return address"]
 class CRS:
     def __init__(self):
-        self.Tokens = ["crs", "route","routing","cr","cris"]
+        self.Tokens = ["crs", "route","routing","cr","cris","carrierroutingservice","carrierroutingservices","getroutingdata"]
 class IDGS:
     def __init__(self):
         self.Tokens = ["tracking"]
