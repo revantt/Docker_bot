@@ -14,12 +14,8 @@ parser = reqparse.RequestParser()
 class Find_Team(Resource):
     def post(self):
         # abort_if_todo_doesnt_exist(question)
-        print(request.form["message"])
-        return {"Response":return_ticket(request.form["message"])[0]}
-
-class CheckSelfServe(Resource):
-    def post(self):
-        return {"Response": returnSelfServeStatus(request.form["message"],True)}
+        print(request.get_json()["message"])
+        return {"Response":return_ticket(request.get_json()["message"])[0]}
 
 
 api.add_resource(Find_Team, '/Find_Team/')
