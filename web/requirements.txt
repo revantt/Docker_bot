@@ -22,3 +22,4 @@ scikit-plot
 pickleshare
 cloudpickle
 packaging
+flask-cors
