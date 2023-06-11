@@ -28,35 +28,36 @@ def getSelfServeStatus(Shipmethod,session):
     return g2s2_payload
 
 def returnSelfServeStatus(pid,isScannable):
-    # printColoured(f"\nHello, you logged in as  {getpass.getuser()}", "green")
-    # printColoured(f"[INFO]: Authentication going on for user {getpass.getuser()} ...", "green")
-    auth = Authentication(maxRedirects=15)
-    auth.sentryAuthentication()
-    printColoured("[INFO]: Sentry authentication done !!", "green")
-    auth.midwayAuthentication()
-    printColoured("[INFO]: Midway authentication done !!", "green")
-    session = auth.session
-    # scannbleId = "230130091013281734149240224AZ"
-    # shipmentid = "71679076847202"
-    # scannbleId = input("Ether the orderID \n")
-    for i in REGION_SUPPORTED:
-        carrierData = CarrierData("", i, "", False)
-        eagleeye = EagleEye(carrierData)
-        if isScannable:
-            eagleEyeResponse = eagleeye.getEagleEyeResponseScanable(session, pid)
-        else:
-            eagleEyeResponse = eagleeye.getEagleEyeResponseShipment(session, pid)
-        Shipmethod = eagleeye.getShipmethod(eagleEyeResponse)
-        if Shipmethod != None:
-            print(Shipmethod)
-            break
-    print("SHIPMETHOD", Shipmethod)
-    if Shipmethod != None:
-        result = getSelfServeStatus(Shipmethod,session)
-        if result["totalResultSize"] == "1":
-            temp = result["payload"][0]["ionPayload"]
-            for s in status:
-                if s in temp:
-                    return True
-        else:
-            return False
+    # # printColoured(f"\nHello, you logged in as  {getpass.getuser()}", "green")
+    # # printColoured(f"[INFO]: Authentication going on for user {getpass.getuser()} ...", "green")
+    # auth = Authentication(maxRedirects=15)
+    # auth.sentryAuthentication()
+    # printColoured("[INFO]: Sentry authentication done !!", "green")
+    # auth.midwayAuthentication()
+    # printColoured("[INFO]: Midway authentication done !!", "green")
+    # session = auth.session
+    # # scannbleId = "230130091013281734149240224AZ"
+    # # shipmentid = "71679076847202"
+    # # scannbleId = input("Ether the orderID \n")
+    # for i in REGION_SUPPORTED:
+    #     carrierData = CarrierData("", i, "", False)
+    #     eagleeye = EagleEye(carrierData)
+    #     if isScannable:
+    #         eagleEyeResponse = eagleeye.getEagleEyeResponseScanable(session, pid)
+    #     else:
+    #         eagleEyeResponse = eagleeye.getEagleEyeResponseShipment(session, pid)
+    #     Shipmethod = eagleeye.getShipmethod(eagleEyeResponse)
+    #     if Shipmethod != None:
+    #         print(Shipmethod)
+    #         break
+    # print("SHIPMETHOD", Shipmethod)
+    # if Shipmethod != None:
+    #     result = getSelfServeStatus(Shipmethod,session)
+    #     if result["totalResultSize"] == "1":
+    #         temp = result["payload"][0]["ionPayload"]
+    #         for s in status:
+    #             if s in temp:
+    #                 return True
+    #     else:
+    #         return False
+    return True
