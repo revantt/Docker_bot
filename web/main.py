@@ -5,12 +5,12 @@ import re
 labeling_tokens = Labeling().Tokens
 upps_tokens = Upps().Tokens
 crs_tokens = CRS().Tokens
-idgs_tokens = IDGS().Tokens
-teams = ["Labeling","UPPS","CRS","IDGS"]
-tokens = [labeling_tokens,upps_tokens,crs_tokens,idgs_tokens]
+manifest_tokens = Manifest().Tokens
+teams = ["Labeling","UPPS","CRS","Manifest"]
+tokens = [labeling_tokens,upps_tokens,crs_tokens,manifest_tokens]
 token_mapping = dict(zip(teams,tokens))
 nlp = spacy.load('en_core_web_sm')
-key_weight = {i:(2 if i in labeling_tokens else 1) for i in upps_tokens+crs_tokens+idgs_tokens+labeling_tokens}
+key_weight = {i:(2 if i in labeling_tokens else 1) for i in upps_tokens+crs_tokens+manifest_tokens+labeling_tokens}
 """
 UPPS : https://sim.amazon.com/issues/create?assignedFolder=27d68c69-8907-4d38-810d-4a2096bb97a1
 CRS : https://sim.amazon.com/issues/create?assignedFolder=6454d593-8767-4d2b-af7d-04194fe7ca4c
