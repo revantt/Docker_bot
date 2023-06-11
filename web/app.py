@@ -17,7 +17,7 @@ def cut_ticket(payload):
     impact = payload["impactedShipment"]
     shipment = payload["shipmentsExample"]
     # s = """  aws tickety --region us-west-2 --endpoint-url https://us-west-2.api.tickety.amazon.dev create-ticket --ticket '{"title": "test ticket", "severity": "SEV_5", "description":"description","categorization": [{"key": "category", "value":"Ticketing"}, {"key": "type", "value":"Wonka"}, {"key": "item","value":"Integration Tests"} ] }' --aws-account-id 474955757919 --ticketing-system-name Default"""
-    final_desc = "Description of issue -- \\n"  + description  + "\\n Impact of the severity --" + impact + "\\n Shipment(s) impacted--  \\n" + "  ".join(shipment)
+    final_desc = "Description of issue -- \\n"  + description  + "\\n Impact of the severity -- \\n" + str(impact) + "\\n Shipment(s) impacted--  \\n" + "  ".join(shipment)
     s = """  aws tickety --region us-west-2 --endpoint-url https://us-west-2.api.tickety.amazon.dev create-ticket --ticket '{"title": "test ticket", "severity": "SEV_5", "description": " """ + str(final_desc) + """ ","categorization": [{"key": "category", "value":"Ticketing"}, {"key": "type", "value":"Wonka"}, {"key": "item","value":"Integration Tests"} ] }' --aws-account-id 474955757919 --ticketing-system-name Default"""
     proc = subprocess.Popen([s], stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
