@@ -34,7 +34,7 @@ class Find_Team(Resource):
         try:
             resp, ret = return_ticket(payload["desc"])
             if ret == 1:
-                result = {"Response": return_ticket(resp)[0],
+                result = {"Response": resp,
                         "SelfServeStatus" : returnSelfServeStatus(payload["shipmentsExample"][0],True)
                       }
             else:
