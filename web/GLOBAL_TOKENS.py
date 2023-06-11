@@ -13,7 +13,3 @@ class CRS:
 class IDGS:
     def __init__(self):
         self.Tokens = ["tracking", "id"]
-
-class Manifest:
-    def __init__(self):
-        self.Tokens = ["manifest","manif"]
