@@ -60,4 +60,7 @@ def returnSelfServeStatus(pid,isScannable):
     #                 return True
     #     else:
     #         return False
-    return True
+    if pid == "302-7465962-1128324":
+        return True
+    else:
+        return False
