@@ -12,4 +12,4 @@ class CRS:
         self.Tokens = ["crs", "route","routing","cr","cris","carrierroutingservice","carrierroutingservices","getroutingdata"]
 class IDGS:
     def __init__(self):
-        self.Tokens = ["tracking", "id"]
+        self.Tokens = ["tracking", "id", "track"]
