@@ -3,7 +3,7 @@ CTI = {
 }
 class Labeling:
     def __init__(self):
-        self.Tokens = [ "overlap", "position", "barcode","scan"]
+        self.Tokens = [ "overlap", "position", "barcode","scan","generate","overflow"]
 class Upps:
     def __init__(self):
         self.Tokens = ["return address"]
